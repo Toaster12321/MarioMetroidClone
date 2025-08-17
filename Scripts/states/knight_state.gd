@@ -9,6 +9,7 @@ static var direction : Vector2
 @onready var run: KnightStateRun = %Run
 @onready var jump: KnightStateJump = %Jump
 @onready var fall: KnightStateFall = %Fall
+@onready var crouch: KnightStateCrouch = %Crouch
 
 
 

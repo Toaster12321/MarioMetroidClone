@@ -48,6 +48,8 @@ func physics_process( _delta : float ) -> KnightState:
 	
 	if direction.x == 0: #if the player isnt holding a direction on any axis return to idle
 		return idle
+	elif direction.y > 0: #pressing the down key 
+		return crouch
 	elif sign( direction.x ) == sign( knight.velocity.x ) or knight.velocity.x == 0:#if we are pushing the same direction we are running
 		current_acceleration = acceleration #update current acceleration
 		knight.animation_player.play("run" + knight.update_direction(direction.x)) #play animation
