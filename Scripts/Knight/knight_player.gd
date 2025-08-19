@@ -8,6 +8,7 @@ class_name Knight extends CharacterBody2D
 @onready var fall: KnightStateFall = %Fall
 @onready var crouch: KnightStateCrouch = %Crouch
 @onready var knight_state_machine: KnightStateMachine = $KnightStateMachine
+@onready var attack: KnightStateAttack = %Attack
 @onready var sprites: Node2D = $Sprites
 
 
@@ -21,11 +22,12 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	velocity.y += gravity * delta * gravity_multiplier #applying gravity in the y axis
+	if is_on_floor() == false: #if not on floor
+		velocity.y += gravity * delta * gravity_multiplier #applying gravity in the y axis
 	move_and_slide() # allows movement
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

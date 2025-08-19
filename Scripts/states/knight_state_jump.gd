@@ -29,6 +29,8 @@ func handle_input( _event : InputEvent ) -> KnightState:
 	if _event.is_action_released("jump"): # variable jump height when jump is released
 		knight.velocity.y *= 0.5 # slowly decrease velocity in y direction
 		return fall
+	elif _event.is_action_pressed("attack"):
+		return attack
 	return null
 
 

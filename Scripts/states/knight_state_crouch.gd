@@ -31,11 +31,13 @@ func exit() -> void: #disable crouch collision and revert to normal collision
 
 
 func handle_input( _event : InputEvent ) -> KnightState:
-	if _event.is_action_pressed("jump"):
+	if _event.is_action_pressed("jump"): #allow transition to jump if pressed
 		if ray_cast_2d.is_colliding() == true:
 			knight.position.y += 2
 			return fall
 		return jump
+	elif _event.is_action_pressed("attack"):  
+		return attack
 	return null
 
 

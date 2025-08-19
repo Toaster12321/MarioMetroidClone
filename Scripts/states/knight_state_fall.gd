@@ -32,6 +32,8 @@ func handle_input( _event : InputEvent ) -> KnightState:
 	if coyote_timer > 0: #if there is coyote time jump is still possible despite location
 		if _event.is_action_pressed("jump"):
 			return jump
+	elif _event.is_action_pressed("attack"):
+		return attack
 	return null
 
 

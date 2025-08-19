@@ -74,6 +74,7 @@ func init( _knight : Knight ) -> void:
 		state.init() #initialize states
 	
 	change_state( current_state ) #change state to first in array
+	current_state.enter()
 	process_mode = Node.PROCESS_MODE_INHERIT #enable state machine 
 	
 	pass
