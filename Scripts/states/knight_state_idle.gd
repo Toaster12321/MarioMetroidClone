@@ -8,7 +8,7 @@ func init() -> void:
 
 
 func enter() -> void:
-	knight.animation_player.play("idle" + knight.update_direction(direction.x)) #play animation
+	knight.animation_player.play("idle") #play animation
 	pass
 
 

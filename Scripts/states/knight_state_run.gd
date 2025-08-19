@@ -52,11 +52,16 @@ func physics_process( _delta : float ) -> KnightState:
 		return crouch
 	elif sign( direction.x ) == sign( knight.velocity.x ) or knight.velocity.x == 0:#if we are pushing the same direction we are running
 		current_acceleration = acceleration #update current acceleration
-		knight.animation_player.play("run" + knight.update_direction(direction.x)) #play animation
+		knight.animation_player.play("run") #play animation
 		knight.animation_player.speed_scale = abs(knight.velocity.x) / move_speed #update the animation speed of running to look faster using absolute value of velocity divided by move speed
 	else: #otherwise we are going the opposite direction so we need to turn around or "skid"
 		current_acceleration = skid_acceleration #set acceleration to skid acceleration
-		knight.animation_player.play("skid" + knight.update_direction(direction.x))
+		knight.animation_player.play("skid")
+	
+	if direction.x != current_direction:#if our direction is not the current direction reset the current direction and update it
+		current_direction = direction.x
+		knight.update_direction( current_direction )
+	
 	
 	knight.update_velocity( direction.x * target_speed, current_acceleration) #update velocity with our direction, move speed and delta using current_acceleration
 	return null

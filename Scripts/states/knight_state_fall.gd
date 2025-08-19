@@ -13,7 +13,7 @@ func init() -> void:
 
 
 func enter() -> void: #on fall state enter
-	knight.animation_player.play("fall" + knight.update_direction(direction.x) ) #play animation
+	knight.animation_player.play("fall") #play animation
 	move_speed = maxf( base_move_speed, abs( knight.velocity.x ) ) #move speed range from base to jump + speed( adds move speed while sprinting to our base move speed)
 	knight.gravity_multiplier = fall_gravity_multipler #update gravity multiplier in player script
 	

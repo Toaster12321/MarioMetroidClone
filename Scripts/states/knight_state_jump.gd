@@ -13,7 +13,7 @@ func init() -> void:
 
 
 func enter() -> void:
-	knight.animation_player.play("jump" + knight.update_direction(direction.x) ) #play animation
+	knight.animation_player.play("jump") #play animation
 	knight.global_position.y -= 1 #move up 1 pixel to avoid is on floor cases
 	knight.velocity.y = -jump_velocity #negative is the up direction
 	
