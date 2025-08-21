@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://m36ssj1waapy"]
+
+[node name="Hitbox" type="Area2D"]
+monitoring = false

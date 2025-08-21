@@ -36,7 +36,7 @@ func update_velocity( _velocity : float, _acceleration : float ) -> void:
 	pass
 
 
-func play_audio( audio : AudioStream ) -> void:
+func play_audio( audio : AudioStream ) -> void: #function to play audio streams
 	if audio == null:
 		return
 	
@@ -54,3 +54,14 @@ func update_direction( direction : float ) -> void: #when we change from left to
 	else:
 		sprites.scale.x = 1 #flip right
 	pass
+
+
+func update_animation( state : String ) -> void: #function that takes a state and updates its animation if it needs multiple directions
+	animation_player.play(state + "_" + anim_direction())
+
+
+func anim_direction() -> String: #returns a left or right based on the current direction of the player
+	if current_direction < 0:
+		return "left"
+	else:
+		return "right"

@@ -3,6 +3,7 @@ class_name KnightStateAttack extends KnightState
 var attacking : bool = false
 
 @export var deceleration : float = 4
+@onready var hurtbox: Hurtbox = $"../../Hurtbox"
 
 func ready() -> void:
 	pass
@@ -13,26 +14,26 @@ func init() -> void:
 
 
 func enter() -> void:
-	knight.animation_player.play("attack")
+	knight.update_animation("attack") #call update animation for animation + direction
 	knight.animation_player.animation_finished.connect( end_attack ) #signal to show when the attack has finished
 	
 	attacking = true
 	await get_tree().create_timer( 0.075 ).timeout #creates slight delay before hitting
 	if attacking:
-		pass #implement hurtbox and turn on
+		hurtbox.monitoring =  true #turn on monitoring for hurtbox
 	pass
 
 
 func exit() -> void:
 	attacking = false
 	knight.animation_player.animation_finished.disconnect( end_attack ) #disconnect the signal
-	#turn off hurtbox
+	hurtbox.monitoring =  false #turn off monitoring for hurtbox
 	pass
 
 
 func handle_input( _event : InputEvent ) -> KnightState:
-	if _event.is_action_pressed("attack"):
-		knight.animation_player.play("attack_2")
+	if _event.is_action_pressed("attack"): #if attack is called during this state the second attack animation is played
+		knight.update_animation("attack_2")#call update animation for animation + direction
 	return null
 
 
