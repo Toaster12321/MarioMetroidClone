@@ -6,6 +6,7 @@ class_name KnightStateCrouch extends KnightState
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var camera_2d: Camera2D = $"../../Camera2D"
 
+var in_crouch : bool = false #bool to see if we are in the crouch state
 
 func ready() -> void:
 	pass
@@ -17,6 +18,7 @@ func init() -> void:
 
 
 func enter() -> void:
+	in_crouch = true #crouching
 	knight.animation_player.play("crouch")
 	ray_cast_2d.enabled = true #enable raycast
 	collision_shape_2d.disabled = true #disable normal collision shape
@@ -24,19 +26,23 @@ func enter() -> void:
 	
 	await get_tree().create_timer( 1 ).timeout #after 1 second move camera down
 	
-	var tween  = get_tree().create_tween() #tween for smoothing
-	tween.tween_property(camera_2d, "position:y", camera_2d.position.y + 70, 0.4) #move camera down 70 pixels for 0.4s
+	if in_crouch: #make sure we are crouching to perform this
+		var tween  = get_tree().create_tween() #tween for smoothing
+		tween.tween_property(camera_2d, "position:y", knight.default_cam_position + 70, 0.4) #move camera down 70 pixels for 0.4s
 	
 	pass
 
 
 func exit() -> void: #disable crouch collision and revert to normal collision
+	in_crouch = false #no longer crouching
 	collision_shape_2d.disabled = false #re-enable normal collision shape
 	collision_shape_2d_crouch.disabled = true #disable crouch collision shape
 	ray_cast_2d.enabled = false #disable raycast
 	
-	var tween  = get_tree().create_tween() #tween for smoothing
-	tween.tween_property(camera_2d, "position:y", camera_2d.position.y - 70, 0.2) #move camera back up 70 pixels in 0.2s for a fast return
+	if knight.camera_2d.position.y != knight.default_cam_position: #if the camera is not in the right position tween back up
+		var tween  = get_tree().create_tween() #tween for smoothing
+		tween.tween_property(camera_2d, "position:y", knight.default_cam_position, 0.2) #move camera back up to default position in 0.2s for a fast return
+	
 	pass
 
 

@@ -1471,10 +1471,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_vl55t")
 
 [node name="CollisionShape2D_Crouch" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_agcwe")
 disabled = true
@@ -1593,6 +1595,7 @@ position = Vector2(0, -18)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+visible = false
 position = Vector2(4, -1)
 shape = SubResource("CircleShape2D_fyb73")
 debug_color = Color(1, 0.0118072, 0.01923, 0.42)

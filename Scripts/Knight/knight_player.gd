@@ -2,6 +2,7 @@ class_name Knight extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var camera_2d: Camera2D = $Camera2D
 @onready var idle: KnightStateIdle = %Idle
 @onready var run: KnightStateRun = %Run
 @onready var jump: KnightStateJump = %Jump
@@ -15,9 +16,11 @@ class_name Knight extends CharacterBody2D
 var gravity : float = 980 #9.81m/s gravity speed
 var gravity_multiplier : float = 1
 var current_direction : float
+var default_cam_position : float
 
 func _ready() -> void:
-	knight_state_machine.init(self) #initialize state machine to player
+	knight_state_machine.init(self) #inistialize state machine to player
+	default_cam_position = camera_2d.position.y #get default camera y placement
 	pass
 
 

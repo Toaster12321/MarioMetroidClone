@@ -42,7 +42,7 @@ func physics_process( _delta : float ) -> KnightState:
 	knight.update_velocity( direction.x * move_speed, acceleration)#update our velocity in this state with direction, move speed at a delta of acceleration
 	
 	
-	if knight.is_on_floor():#transition to idle state if on floor
+	if knight.is_on_floor():#update to idle state if on floor
 		return idle
 	elif knight.velocity.y >= 0: #when player goes down go to fall state
 		return fall
