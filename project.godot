@@ -61,6 +61,7 @@ attack={
 2d_physics/layer_1="Knight"
 2d_physics/layer_5="Ground"
 2d_physics/layer_6="One-way Ground"
+2d_physics/layer_9="Enemy"
 
 [rendering]
 

@@ -1457,7 +1457,7 @@ height = 36.0
 radius = 26.0192
 
 [node name="Knight" type="CharacterBody2D"]
-collision_mask = 49
+collision_mask = 48
 floor_constant_speed = true
 floor_block_on_wall = false
 floor_max_angle = 1.15192
@@ -1471,12 +1471,10 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_vl55t")
 
 [node name="CollisionShape2D_Crouch" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_agcwe")
 disabled = true
