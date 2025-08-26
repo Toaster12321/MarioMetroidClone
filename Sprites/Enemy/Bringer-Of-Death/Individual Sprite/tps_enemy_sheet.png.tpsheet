@@ -1,0 +1,78 @@
+{
+	"textures": [
+		{
+			"image": "tps_enemy_sheet.png.png",
+			"size": {
+				"w": 1400,
+				"h": 368
+			},
+			"sprites": [
+				{
+					"filename": "Outline-Bringer-of-Death_Attack-sheet.png",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 1400,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Outline-Bringer-of-Death_Death-sheet.png",
+					"region": {
+						"x": 0,
+						"y": 92,
+						"w": 1400,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Outline-Bringer-of-Death_Idle-sheet.png",
+					"region": {
+						"x": 0,
+						"y": 184,
+						"w": 1120,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "Outline-Bringer-of-Death_Walk-sheet.png",
+					"region": {
+						"x": 0,
+						"y": 276,
+						"w": 1120,
+						"h": 92
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:8e8f179c3240037a22622c18cffcde66:9b1a0bb3372293a18a9dd6f105c3b561:9808699f27b8f7eaf8c3fd2d77ef22c3$"
+	}
+}
