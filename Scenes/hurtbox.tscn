@@ -3,5 +3,7 @@
 [ext_resource type="Script" uid="uid://dssfnjsjv0g0p" path="res://Scripts/Knight/hurtbox.gd" id="1_rnnan"]
 
 [node name="Hurtbox" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 monitorable = false
 script = ExtResource("1_rnnan")

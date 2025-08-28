@@ -4,11 +4,15 @@ signal direction_changed( new_direction : Vector2 )
 signal enemy_damaged( hurt_box : Hurtbox )
 signal enemy_destroyed( hurt_box : Hurtbox )
 
+@export var hp : int = 5
+
 var gravity : float = 980 #9.81m/s gravity speed
 var gravity_multiplier : float = 1
 var direction : Vector2 = Vector2.ZERO
+var knight : Knight
+var invulnerable : bool = false
 
-const DIR_2 = [ Vector2.LEFT, Vector2.RIGHT ] 
+const DIR_2 = [ Vector2.LEFT, Vector2.RIGHT ] #enemies two directions
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var wander: EnemyStateWander = %Wander
@@ -17,11 +21,13 @@ const DIR_2 = [ Vector2.LEFT, Vector2.RIGHT ]
 @onready var attack: EnemyStateAttack = %Attack
 @onready var enemy_state_machine: EnemyStateMachine = $EnemyStateMachine
 @onready var sprite: Node2D = $Sprite
-
+@onready var hitbox: Hitbox = $Hitbox
 
 
 func _ready() -> void:
-	enemy_state_machine.init( self )
+	enemy_state_machine.init( self ) #initialize state machine
+	knight = GlobalPlayerManager.knight
+	hitbox.damaged.connect( _take_damage ) #if enemy hitbox has been entered by a hurtbox connect damaged function
 	pass
 
 
@@ -33,7 +39,7 @@ func _physics_process(delta: float) -> void:
 
 
 func set_direction( _new_direction : Vector2 ) -> void:
-	if _new_direction != Vector2.ZERO:
+	if _new_direction != Vector2.ZERO: #if we arent idle set direction to passed in
 		direction = _new_direction
 	
 		if _new_direction == Vector2.LEFT: #since sprite starts left side we flip logic
@@ -41,4 +47,15 @@ func set_direction( _new_direction : Vector2 ) -> void:
 		elif _new_direction == Vector2.RIGHT: 
 			sprite.scale.x = -1 #if we are facing right flip to left
 	
-	direction_changed.emit( direction )
+	direction_changed.emit( direction ) #emit signal for direction changed
+
+
+func _take_damage( hurtbox : Hurtbox ) -> void: #function called when damaged signal has been connected
+	if invulnerable == true: #if we have already been hit we cant be hit agian
+		return
+	hp -= hurtbox.damage #decrease hp
+	if hp > 0:
+		enemy_damaged.emit( hurtbox ) #trigger signal to enemy damaged
+	else:
+		enemy_destroyed.emit( hurtbox ) #trigger signal to enemy destroyed
+	

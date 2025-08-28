@@ -1,6 +1,6 @@
 class_name EnemyStateIdle extends EnemyState
 
-@export var state_duration_min : float = 0.5
+@export var state_duration_min : float = 0.5 #how long the state will last for
 @export var state_duration_max : float = 1.5
 
 var _timer : float = 0.0
@@ -9,10 +9,10 @@ func init() -> void:
 	pass
 
 
-func enter() -> void:
-	enemy.animation_player.play("idle")
-	_timer = randf_range( state_duration_min, state_duration_max )
-	enemy.velocity = Vector2.ZERO
+func enter() -> void: 
+	enemy.animation_player.play("idle") #play idle animation 
+	_timer = randf_range( state_duration_min, state_duration_max ) #set timer to a random amount between desired time
+	enemy.velocity = Vector2.ZERO #stop enemy
 	pass
 
 
@@ -21,9 +21,9 @@ func exit() -> void:
 
 
 func process( _delta : float ) -> EnemyState:
-	_timer -= _delta
+	_timer -= _delta #start state timer
 	if _timer <= 0:
-		return wander
+		return wander #start wandering when over
 	return null
 
 
