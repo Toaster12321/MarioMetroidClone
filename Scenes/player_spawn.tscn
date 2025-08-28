@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://tis8dvln4oqr"]
+
+[ext_resource type="Script" uid="uid://77d1l05fffv3" path="res://Scripts/Knight/player_spawn.gd" id="1_usbxr"]
+[ext_resource type="Texture2D" uid="uid://8y62mivsvsun" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="2_86iqg"]
+
+[node name="PlayerSpawn" type="Node2D"]
+script = ExtResource("1_usbxr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.203922, 1, 0.203922, 1)
+position = Vector2(0, -40)
+texture = ExtResource("2_86iqg")
+hframes = 10

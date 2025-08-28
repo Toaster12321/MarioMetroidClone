@@ -1,0 +1,1 @@
+class_name EnemyStateAttack extends EnemyState

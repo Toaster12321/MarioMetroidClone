@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bh5be65ovlra8"]
+[gd_scene load_steps=19 format=4 uid="uid://bh5be65ovlra8"]
 
 [ext_resource type="Texture2D" uid="uid://bfpbvy3rgd6n2" path="res://Sprites/TileMaps/brush.png" id="1_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://dm1dngg1xrnm7" path="res://Scenes/tilemaplvl1.tscn" id="2_8ffim"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cmmmbx4il84td" path="res://Sprites/TileMaps/Background_0.png" id="5_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://dre7djsu4y2qq" path="res://Sprites/TileMaps/Background_1.png" id="6_6r07y"]
 [ext_resource type="Texture2D" uid="uid://byr35ggjm2nf1" path="res://Sprites/TileMaps/Tiles.png" id="7_wrinw"]
+[ext_resource type="PackedScene" uid="uid://tis8dvln4oqr" path="res://Scenes/player_spawn.tscn" id="10_af3po"]
 [ext_resource type="PackedScene" uid="uid://crxu0j537bvmp" path="res://Scenes/death_bringer.tscn" id="10_chwpn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ioyp"]
@@ -941,3 +942,6 @@ texture = ExtResource("5_uy8f0")
 
 [node name="DeathBringer" parent="." instance=ExtResource("10_chwpn")]
 position = Vector2(193, 168)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("10_af3po")]
+position = Vector2(-7, 155)
