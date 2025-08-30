@@ -1,24 +1,25 @@
-[gd_scene load_steps=36 format=3 uid="uid://bj4rkw7gwpm65"]
+[gd_scene load_steps=38 format=3 uid="uid://bj4rkw7gwpm65"]
 
-[ext_resource type="Texture2D" uid="uid://8y62mivsvsun" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="1_c8nad"]
-[ext_resource type="Script" uid="uid://c1iascmee6h4m" path="res://Scripts/Knight/knight_player.gd" id="1_vl55t"]
-[ext_resource type="Texture2D" uid="uid://nd7qtovppi37" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Run.png" id="2_38m3n"]
-[ext_resource type="Texture2D" uid="uid://cn0da6acx32bi" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Jump.png" id="3_ueesy"]
-[ext_resource type="Texture2D" uid="uid://co3rrflxcece2" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Fall.png" id="5_0dxnd"]
-[ext_resource type="Script" uid="uid://8ctg2co4oaal" path="res://Scripts/states/knight states/knight_state_machine.gd" id="6_j4ema"]
-[ext_resource type="Texture2D" uid="uid://vrrkhhtnbmf3" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Skid.png" id="6_yq5bp"]
-[ext_resource type="Script" uid="uid://pchcj1xroq5l" path="res://Scripts/states/knight states/knight_state_idle.gd" id="7_0i2a2"]
-[ext_resource type="Script" uid="uid://crsd668e0tgcf" path="res://Scripts/states/knight states/knight_state_crouch.gd" id="7_agcwe"]
-[ext_resource type="Script" uid="uid://bhi8dcj64v1wr" path="res://Scripts/states/knight states/knight_state_run.gd" id="8_0dxnd"]
-[ext_resource type="Script" uid="uid://cdajuvoxupyl3" path="res://Scripts/states/knight states/knight_state_attack.gd" id="8_j8mqq"]
-[ext_resource type="Script" uid="uid://i6wfrgjf58lo" path="res://Scripts/states/knight states/knight_state_jump.gd" id="9_yq5bp"]
-[ext_resource type="Script" uid="uid://bahrjv436ncct" path="res://Scripts/states/knight states/knight_state_fall.gd" id="10_0dxnd"]
-[ext_resource type="Texture2D" uid="uid://chn5v53ouukxt" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_CrouchFull.png" id="12_qq03a"]
-[ext_resource type="Texture2D" uid="uid://dbejbxb4c580o" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Attack.png" id="14_ja6vx"]
-[ext_resource type="Texture2D" uid="uid://cu7jjedeh4tfm" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Attack2.png" id="16_yfvn0"]
-[ext_resource type="PackedScene" uid="uid://m36ssj1waapy" path="res://Scenes/hitbox.tscn" id="17_34edh"]
-[ext_resource type="PackedScene" uid="uid://bnuys61e5tege" path="res://Scenes/hurtbox.tscn" id="18_3urcc"]
-[ext_resource type="PackedScene" uid="uid://okexadwa3mfi" path="res://Scenes/cast_shadow.tscn" id="19_fyb73"]
+[ext_resource type="Script" uid="uid://c1iascmee6h4m" path="res://Scripts/Knight/knight_player.gd" id="1_5m4qd"]
+[ext_resource type="Script" uid="uid://8ctg2co4oaal" path="res://Scripts/states/knight states/knight_state_machine.gd" id="2_vggyu"]
+[ext_resource type="Script" uid="uid://pchcj1xroq5l" path="res://Scripts/states/knight states/knight_state_idle.gd" id="3_srrma"]
+[ext_resource type="Script" uid="uid://bhi8dcj64v1wr" path="res://Scripts/states/knight states/knight_state_run.gd" id="4_t2eej"]
+[ext_resource type="Script" uid="uid://i6wfrgjf58lo" path="res://Scripts/states/knight states/knight_state_jump.gd" id="5_2frtv"]
+[ext_resource type="Script" uid="uid://bahrjv436ncct" path="res://Scripts/states/knight states/knight_state_fall.gd" id="6_3xrgn"]
+[ext_resource type="Script" uid="uid://crsd668e0tgcf" path="res://Scripts/states/knight states/knight_state_crouch.gd" id="7_xpw4a"]
+[ext_resource type="Script" uid="uid://cdajuvoxupyl3" path="res://Scripts/states/knight states/knight_state_attack.gd" id="8_y66y0"]
+[ext_resource type="Texture2D" uid="uid://8y62mivsvsun" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Idle.png" id="9_58ol3"]
+[ext_resource type="Texture2D" uid="uid://nd7qtovppi37" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Run.png" id="10_a5jte"]
+[ext_resource type="Texture2D" uid="uid://cn0da6acx32bi" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Jump.png" id="11_c0i80"]
+[ext_resource type="Texture2D" uid="uid://co3rrflxcece2" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Fall.png" id="12_dd26y"]
+[ext_resource type="Texture2D" uid="uid://vrrkhhtnbmf3" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Skid.png" id="13_rxkvb"]
+[ext_resource type="Texture2D" uid="uid://chn5v53ouukxt" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_CrouchFull.png" id="14_5pdnt"]
+[ext_resource type="Texture2D" uid="uid://dbejbxb4c580o" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Attack.png" id="15_3iy7d"]
+[ext_resource type="Texture2D" uid="uid://cu7jjedeh4tfm" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Attack2.png" id="16_fehsq"]
+[ext_resource type="Texture2D" uid="uid://dpst6f0thc82u" path="res://Sprites/FreeKnight/Colour1/Outline/120x80_PNGSheets/_Shield.png" id="17_cic2m"]
+[ext_resource type="PackedScene" uid="uid://m36ssj1waapy" path="res://Scenes/general/hitbox.tscn" id="18_ch8o0"]
+[ext_resource type="PackedScene" uid="uid://bnuys61e5tege" path="res://Scenes/general/hurtbox.tscn" id="19_tume3"]
+[ext_resource type="PackedScene" uid="uid://okexadwa3mfi" path="res://Scenes/general/cast_shadow.tscn" id="20_uun74"]
 
 [sub_resource type="Animation" id="Animation_ueesy"]
 length = 0.001
@@ -238,6 +239,30 @@ tracks/17/keys = {
 "update": 0,
 "values": [Vector2(0, -18)]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Sprites/shield_sprite:frame")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Sprites/shield_sprite:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_revvw"]
 resource_name = "attack_2_left"
@@ -362,6 +387,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-33, -18)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/shield_sprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_3urcc"]
@@ -488,6 +525,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(25, -18)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/shield_sprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fyb73"]
 resource_name = "attack_left"
@@ -612,6 +661,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-38, -18)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/shield_sprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_j8mqq"]
@@ -738,6 +799,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(30, -18)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/shield_sprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_34edh"]
 resource_name = "crouch"
@@ -846,6 +919,18 @@ tracks/8/path = NodePath("Sprites/attack2_sprite:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -976,6 +1061,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprites/shield_sprite:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vl55t"]
 resource_name = "idle"
@@ -1089,6 +1186,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_j4ema"]
 resource_name = "jump"
@@ -1197,6 +1306,18 @@ tracks/8/path = NodePath("Sprites/attack2_sprite:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -1316,6 +1437,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qq03a"]
 resource_name = "skid"
@@ -1428,6 +1561,143 @@ tracks/8/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5m4qd"]
+resource_name = "shield"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/shield_sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 2, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/run_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/jump_sprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprites/idle_sprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprites/fall_sprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprites/skid_sprite:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprites/crouch_sprite:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprites/attack_sprite:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprites/attack2_sprite:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprites/shield_sprite:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j4ema"]
 _data = {
@@ -1441,6 +1711,7 @@ _data = {
 &"idle": SubResource("Animation_vl55t"),
 &"jump": SubResource("Animation_j4ema"),
 &"run": SubResource("Animation_j7mmt"),
+&"shield": SubResource("Animation_5m4qd"),
 &"skid": SubResource("Animation_qq03a")
 }
 
@@ -1464,7 +1735,7 @@ floor_constant_speed = true
 floor_block_on_wall = false
 floor_max_angle = 1.15192
 floor_snap_length = 4.0
-script = ExtResource("1_vl55t")
+script = ExtResource("1_5m4qd")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1473,10 +1744,12 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -18)
 shape = SubResource("RectangleShape2D_vl55t")
 
 [node name="CollisionShape2D_Crouch" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_agcwe")
 disabled = true
@@ -1488,29 +1761,29 @@ max_polyphony = 4
 position = Vector2(0, -51)
 
 [node name="KnightStateMachine" type="Node2D" parent="."]
-script = ExtResource("6_j4ema")
+script = ExtResource("2_vggyu")
 
 [node name="Idle" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
-script = ExtResource("7_0i2a2")
+script = ExtResource("3_srrma")
 
 [node name="Run" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
-script = ExtResource("8_0dxnd")
+script = ExtResource("4_t2eej")
 
 [node name="Jump" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
-script = ExtResource("9_yq5bp")
+script = ExtResource("5_2frtv")
 jump_velocity = 400.0
 
 [node name="Fall" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
-script = ExtResource("10_0dxnd")
+script = ExtResource("6_3xrgn")
 
 [node name="Crouch" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
 position = Vector2(-1, 0)
-script = ExtResource("7_agcwe")
+script = ExtResource("7_xpw4a")
 
 [node name="RayCast2D" type="RayCast2D" parent="KnightStateMachine/Crouch"]
 position = Vector2(1, 0)
@@ -1521,35 +1794,35 @@ hit_from_inside = true
 
 [node name="Attack" type="Node2D" parent="KnightStateMachine"]
 unique_name_in_owner = true
-script = ExtResource("8_j8mqq")
+script = ExtResource("8_y66y0")
 
 [node name="Sprites" type="Node2D" parent="."]
 
 [node name="idle_sprite" type="Sprite2D" parent="Sprites"]
 texture_filter = 1
 position = Vector2(5, -40)
-texture = ExtResource("1_c8nad")
+texture = ExtResource("9_58ol3")
 hframes = 10
 
 [node name="run_sprite" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 1
 position = Vector2(5, -40)
-texture = ExtResource("2_38m3n")
+texture = ExtResource("10_a5jte")
 hframes = 10
 
 [node name="jump_sprite" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 1
 position = Vector2(5, -40)
-texture = ExtResource("3_ueesy")
+texture = ExtResource("11_c0i80")
 hframes = 3
 
 [node name="fall_sprite" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 1
 position = Vector2(5, -40)
-texture = ExtResource("5_0dxnd")
+texture = ExtResource("12_dd26y")
 hframes = 3
 frame = 1
 
@@ -1557,7 +1830,7 @@ frame = 1
 visible = false
 texture_filter = 1
 position = Vector2(3, -40)
-texture = ExtResource("6_yq5bp")
+texture = ExtResource("13_rxkvb")
 hframes = 3
 frame = 1
 
@@ -1565,25 +1838,33 @@ frame = 1
 visible = false
 texture_filter = 1
 position = Vector2(3, -40)
-texture = ExtResource("12_qq03a")
+texture = ExtResource("14_5pdnt")
 hframes = 3
 
 [node name="attack_sprite" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 1
 position = Vector2(-3, -40)
-texture = ExtResource("14_ja6vx")
+texture = ExtResource("15_3iy7d")
 hframes = 4
 
 [node name="attack2_sprite" type="Sprite2D" parent="Sprites"]
 visible = false
 texture_filter = 1
 position = Vector2(-3, -40)
-texture = ExtResource("16_yfvn0")
+texture = ExtResource("16_fehsq")
 hframes = 6
 frame = 1
 
-[node name="Hitbox" parent="." instance=ExtResource("17_34edh")]
+[node name="shield_sprite" type="Sprite2D" parent="Sprites"]
+visible = false
+texture_filter = 1
+position = Vector2(-3, -40)
+texture = ExtResource("17_cic2m")
+hframes = 3
+
+[node name="Hitbox" parent="." instance=ExtResource("18_ch8o0")]
+visible = false
 position = Vector2(0, -18)
 collision_layer = 2
 
@@ -1591,7 +1872,8 @@ collision_layer = 2
 shape = SubResource("CapsuleShape2D_34edh")
 debug_color = Color(0.619411, 0.534763, 3.85046e-07, 0.42)
 
-[node name="Hurtbox" parent="." instance=ExtResource("18_3urcc")]
+[node name="Hurtbox" parent="." instance=ExtResource("19_tume3")]
+visible = false
 position = Vector2(0, -18)
 collision_mask = 256
 monitoring = false
@@ -1601,5 +1883,5 @@ position = Vector2(4, -1)
 shape = SubResource("CircleShape2D_fyb73")
 debug_color = Color(1, 0.0118072, 0.01923, 0.42)
 
-[node name="CastShadow" parent="." instance=ExtResource("19_fyb73")]
+[node name="CastShadow" parent="." instance=ExtResource("20_uun74")]
 shadow_size = Vector2(0.45, 0.09)

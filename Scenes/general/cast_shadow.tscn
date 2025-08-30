@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://okexadwa3mfi"]
 
-[ext_resource type="Script" uid="uid://co78ywkwls1u2" path="res://Scripts/castshadow/cast_shadow.gd" id="1_2b8ud"]
+[ext_resource type="Script" uid="uid://co78ywkwls1u2" path="res://Scripts/general/cast_shadow.gd" id="1_1cng6"]
 
 [sub_resource type="Gradient" id="Gradient_revvw"]
 offsets = PackedFloat32Array(0.517857, 1)
@@ -14,7 +14,7 @@ fill_to = Vector2(1, 0.5)
 
 [node name="CastShadow" type="Node2D"]
 show_behind_parent = true
-script = ExtResource("1_2b8ud")
+script = ExtResource("1_1cng6")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 100)

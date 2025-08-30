@@ -1,6 +1,6 @@
 extends Node
 
-const KNIGHT = preload("res://Scenes/knight_player.tscn") #preload for knight scene
+const KNIGHT = preload("res://Scenes/knight/knight_player.tscn") #preload for knight scene
 
 var knight : Knight #create instance for knight
 var knight_spawned : bool = false
