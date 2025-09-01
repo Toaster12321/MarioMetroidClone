@@ -11,6 +11,7 @@ static var direction : Vector2
 @onready var fall: KnightStateFall = %Fall
 @onready var crouch: KnightStateCrouch = %Crouch
 @onready var attack: KnightStateAttack = %Attack
+@onready var shield: KnightStateShield = %Shield
 
 
 

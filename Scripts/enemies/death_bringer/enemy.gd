@@ -42,9 +42,9 @@ func set_direction( _new_direction : Vector2 ) -> void:
 	if _new_direction != Vector2.ZERO: #if we arent idle set direction to passed in
 		direction = _new_direction
 	
-		if _new_direction == Vector2.LEFT: #since sprite starts left side we flip logic
+		if direction.x < 0: #since sprite starts left side we flip logic
 			sprite.scale.x = 1   #if we are facing left flip to right
-		elif _new_direction == Vector2.RIGHT: 
+		elif direction.x > 0: 
 			sprite.scale.x = -1 #if we are facing right flip to left
 	
 	direction_changed.emit( direction ) #emit signal for direction changed
@@ -58,4 +58,15 @@ func _take_damage( hurtbox : Hurtbox ) -> void: #function called when damaged si
 		enemy_damaged.emit( hurtbox ) #trigger signal to enemy damaged
 	else:
 		enemy_destroyed.emit( hurtbox ) #trigger signal to enemy destroyed
-	
+
+
+func update_animation( state : String ) -> void: #function that takes a state and updates its animation if it needs multiple directions
+	animation_player.play(state + "_" + anim_direction())
+	pass
+
+
+func anim_direction() -> String: #returns a left or right based on the current direction of the player
+	if direction.x < 0:
+		return "left"
+	else:
+		return "right"

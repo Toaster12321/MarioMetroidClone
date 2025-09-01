@@ -54,6 +54,8 @@ func handle_input( _event : InputEvent ) -> KnightState:
 		return jump
 	elif _event.is_action_pressed("attack"):  
 		return attack
+	elif _event.is_action_pressed("shield"):
+		return shield
 	return null
 
 

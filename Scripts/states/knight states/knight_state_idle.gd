@@ -19,8 +19,10 @@ func exit() -> void:
 func handle_input( _event : InputEvent ) -> KnightState:
 	if _event.is_action_pressed("jump"): #transition to jump state when button is pressed
 		return jump
-	if _event.is_action_pressed("attack"): #transition to attack state when button is pressed
+	elif _event.is_action_pressed("attack"): #transition to attack state when button is pressed
 		return attack
+	elif _event.is_action_pressed("shield"):
+		return shield
 	return null
 
 

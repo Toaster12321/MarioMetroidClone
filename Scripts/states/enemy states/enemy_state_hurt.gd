@@ -6,6 +6,7 @@ class_name EnemyStateHurt extends EnemyState
 var _damage_position : Vector2
 var _animation_finished : bool = false
 var _direction : Vector2
+var _normalized_direction : Vector2
 
 func init() -> void: 
 	enemy.enemy_damaged.connect( _on_enemy_damaged ) # connect enemy damaged signal
@@ -18,8 +19,13 @@ func enter() -> void:
 	
 	_direction = enemy.global_position.direction_to( _damage_position ) #get direction based on global position of damage position
 	
-	enemy.set_direction( _direction ) #set direction to face the attacking knight
-	enemy.velocity = _direction * -knockback_speed #push enemy backwards
+	if _direction.x > 0: #normalize direction into left and right instead of floats
+		_normalized_direction = Vector2.RIGHT
+	else:
+		_normalized_direction = Vector2.LEFT
+	
+	enemy.set_direction( _normalized_direction ) #set direction to face the attacking knight
+	enemy.velocity = _direction * -knockback_speed #push enemy backward
 	
 	enemy.animation_player.play("hurt") #play hurt animation 
 	enemy.animation_player.animation_finished.connect( _on_animation_finished ) #connect to animation finished function when anim is done
@@ -34,7 +40,7 @@ func exit() -> void:
 
 func process( _delta : float ) -> EnemyState:
 	if _animation_finished == true:  #return the attack state when animation is over
-		return wander #return attack
+		return attack #retaliate
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta #deceleration speed
 	return null
 

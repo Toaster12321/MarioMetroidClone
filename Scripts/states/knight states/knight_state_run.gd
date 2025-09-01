@@ -35,8 +35,10 @@ func handle_input( _event : InputEvent ) -> KnightState:
 		target_speed = move_speed
 	elif _event.is_action_pressed("jump"): #allow transition to jump if pressed
 		return jump
-	elif _event.is_action_pressed("attack"): #allow transition to jump if pressed
+	elif _event.is_action_pressed("attack"): #allow transition to attack if pressed
 		return attack
+	elif _event.is_action_pressed("shield"):
+		return shield
 	return null
 
 

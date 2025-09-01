@@ -9,6 +9,7 @@ class_name Knight extends CharacterBody2D
 @onready var fall: KnightStateFall = %Fall
 @onready var crouch: KnightStateCrouch = %Crouch
 @onready var knight_state_machine: KnightStateMachine = $KnightStateMachine
+@onready var shield: KnightStateShield = %Shield
 @onready var attack: KnightStateAttack = %Attack
 @onready var sprites: Node2D = $Sprites
 @onready var hitbox: Hitbox = $Hitbox
@@ -27,6 +28,8 @@ var max_hp : int = 6
 func _ready() -> void:
 	knight_state_machine.init(self) #inistialize state machine to player
 	default_cam_position = camera_2d.position.y #get default camera y placement
+	hitbox.damaged.connect( _take_damage ) #take damage if hitbox has been entered
+	update_hp(99) #restore player to full hp
 	pass
 
 
@@ -76,12 +79,13 @@ func anim_direction() -> String: #returns a left or right based on the current d
 		return "right"
 
 
-func _take_damge( hurtbox : Hurtbox ) -> void: #take damage function for player
+func _take_damage( hurtbox : Hurtbox ) -> void: #take damage function for player
 	if invulnerable == true: #do nothing if we have been hit already
 		return 
 	 
 	if hp > 0: #if we have hp decrease it
 		update_hp( -hurtbox.damage )
+		print(hp)
 		player_damaged.emit( hurtbox ) #trigger the player damaged signal with hurtbox passed in
 	pass
 
