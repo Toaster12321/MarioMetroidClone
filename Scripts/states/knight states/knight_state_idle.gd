@@ -33,6 +33,7 @@ func process( _delta : float ) -> KnightState:
 func physics_process( _delta : float ) -> KnightState:
 	knight.update_velocity( 0, deceleration ) #stop players velocity and acceleration
 	if direction.x != 0: #if the player is holding any direction in the x axis we are running
+		knight.update_direction(direction.x)
 		return run
 	elif direction.y > 0: #pressing the down key 
 		return crouch

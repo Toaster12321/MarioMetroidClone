@@ -6,6 +6,7 @@ class_name EnemyStateAttack extends EnemyState
 var _timer : float = 0.0
 var _can_see_player : bool = false
 
+
 func init() -> void:
 	if vision_area: #if a vision area is connected connect player area entered and exited function
 		vision_area.player_enetered.connect( _on_player_entered )
@@ -14,10 +15,9 @@ func init() -> void:
 
 
 func enter() -> void:
-	
+	_can_see_player = true #enemy sees the player
 	_timer = state_aggro_duration #timer is equal to our aggro duration
 	enemy.update_animation("attack") #play attack animation
-	_can_see_player = true #enemy sees the player
 	
 	enemy.animation_player.animation_finished.connect( _on_attack_finished ) #connect to attack finished function after 1st attack
 	pass

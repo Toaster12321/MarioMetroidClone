@@ -941,7 +941,7 @@ position = Vector2(152, 70)
 texture = ExtResource("5_uy8f0")
 
 [node name="DeathBringer" parent="." instance=ExtResource("10_chwpn")]
-position = Vector2(193, 168)
+position = Vector2(193, 233)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("10_af3po")]
 position = Vector2(-7, 155)

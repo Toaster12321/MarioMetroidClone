@@ -1,6 +1,7 @@
 class_name Knight extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var idle: KnightStateIdle = %Idle
@@ -11,6 +12,7 @@ class_name Knight extends CharacterBody2D
 @onready var knight_state_machine: KnightStateMachine = $KnightStateMachine
 @onready var shield: KnightStateShield = %Shield
 @onready var attack: KnightStateAttack = %Attack
+@onready var hit: KnightStateHit = %Hit
 @onready var sprites: Node2D = $Sprites
 @onready var hitbox: Hitbox = $Hitbox
 
