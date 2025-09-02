@@ -12,6 +12,7 @@ class_name Knight extends CharacterBody2D
 @onready var knight_state_machine: KnightStateMachine = $KnightStateMachine
 @onready var shield: KnightStateShield = %Shield
 @onready var attack: KnightStateAttack = %Attack
+@onready var death: KnightStateDeath = %Death
 @onready var hit: KnightStateHit = %Hit
 @onready var sprites: Node2D = $Sprites
 @onready var hitbox: Hitbox = $Hitbox

@@ -13,6 +13,7 @@ static var direction : Vector2
 @onready var attack: KnightStateAttack = %Attack
 @onready var shield: KnightStateShield = %Shield
 @onready var hit: KnightStateHit = %Hit
+@onready var death: KnightStateDeath = %Death
 
 
 

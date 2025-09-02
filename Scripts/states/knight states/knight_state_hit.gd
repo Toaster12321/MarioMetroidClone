@@ -62,14 +62,14 @@ func physics_process( _delta : float ) -> KnightState:
 
 func _player_damaged( _hurtbox : Hurtbox ) -> void:
 	hurtbox = _hurtbox #send hurtbox to player damaged signal
-	#if state_machine.current_state != death
-	state_machine.change_state( self ) #change state to hurt
+	if knight.hp <= 0:
+		state_machine.change_state( death )
+	else:
+		state_machine.change_state( self ) #change state to hurt
 	pass
 
 
 func _animation_finished( _anim : String ) -> void:
-	_anim_finished = true
 	if knight.hp <= 0:
-		pass
-		#return death
-	pass
+		state_machine.change_state( death )
+	_anim_finished = true

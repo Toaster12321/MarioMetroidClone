@@ -318,14 +318,14 @@ script = ExtResource("8_m3dfb")
 unique_name_in_owner = true
 script = ExtResource("9_rnrj7")
 
-[node name="Death" type="Node2D" parent="EnemyStateMachine"]
-unique_name_in_owner = true
-script = ExtResource("10_rnrj7")
-
 [node name="Attack" type="Node2D" parent="EnemyStateMachine" node_paths=PackedStringArray("vision_area")]
 unique_name_in_owner = true
 script = ExtResource("11_lwf2y")
 vision_area = NodePath("../../VisionArea")
+
+[node name="Death" type="Node2D" parent="EnemyStateMachine"]
+unique_name_in_owner = true
+script = ExtResource("10_rnrj7")
 
 [node name="VisionArea" parent="." instance=ExtResource("12_lbltc")]
 position = Vector2(0, -24)

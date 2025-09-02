@@ -30,9 +30,6 @@ func exit() -> void:
 
 
 func process( _delta : float ) -> EnemyState:
-	if GlobalPlayerManager.knight.hp <= 0: # if player has no hp go to wander
-		return wander
-	
 	if _can_see_player == false: #if we cant see the enemy start timer
 		_timer -= _delta
 		if _timer <= 0: #once out go to idle
@@ -63,6 +60,10 @@ func _on_player_exited() -> void:
 
 
 func _on_attack_finished( _anim : String ) -> void:
+	if GlobalPlayerManager.knight.hp <= 0: # if player has no hp go to wander
+		state_machine.change_state(idle)
+		return
+
 	if _can_see_player != false: #if enemy is still inside vision after an attack, attack again
 		enemy.update_animation("attack")
 	pass
