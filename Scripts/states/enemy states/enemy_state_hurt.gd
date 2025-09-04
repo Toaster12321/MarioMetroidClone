@@ -55,6 +55,6 @@ func _on_enemy_damaged( hurtbox : Hurtbox ) -> void: #when enemy damaged signal 
 	pass
 
 
-func _on_animation_finished( anim : String ) -> void: 
+func _on_animation_finished( _anim : String ) -> void: 
 	_animation_finished = true #set animation finished to true so enemy can be hit again
 	pass

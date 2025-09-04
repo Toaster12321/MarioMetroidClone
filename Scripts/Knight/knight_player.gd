@@ -16,14 +16,17 @@ class_name Knight extends CharacterBody2D
 @onready var hit: KnightStateHit = %Hit
 @onready var sprites: Node2D = $Sprites
 @onready var hitbox: Hitbox = $Hitbox
+@onready var shieldbox: Shieldbox = $ShieldHitbox
+
 
 
 var gravity : float = 980 #9.81m/s gravity speed
 var gravity_multiplier : float = 1
-var current_direction : float
+var current_direction : float = 1
 var default_cam_position : float
 
 signal player_damaged( hurtbox : Hurtbox )
+signal damage_blocked( hurtbox : Hurtbox )
 var invulnerable = false
 var hp : int = 6
 var max_hp : int = 6
@@ -31,7 +34,8 @@ var max_hp : int = 6
 func _ready() -> void:
 	knight_state_machine.init(self) #inistialize state machine to player
 	default_cam_position = camera_2d.position.y #get default camera y placement
-	hitbox.damaged.connect( _take_damage ) #take damage if hitbox has been entered
+	hitbox.damaged.connect( _take_damage ) #connect take damage function if hitbox has been entered
+	shieldbox.deflected.connect( _block_damage ) #connect deflected function if shieldbox has been entered
 	update_hp(99) #restore player to full hp
 	pass
 
@@ -90,6 +94,11 @@ func _take_damage( hurtbox : Hurtbox ) -> void: #take damage function for player
 		update_hp( -hurtbox.damage )
 		print(hp)
 		player_damaged.emit( hurtbox ) #trigger the player damaged signal with hurtbox passed in
+	pass
+
+
+func _block_damage( hurtbox : Hurtbox ) -> void:
+	damage_blocked.emit( hurtbox ) # trigger the damage blocked signal passing in the hurtbox
 	pass
 
 

@@ -44,7 +44,6 @@ func change_state( _new_state : KnightState ) -> void:
 	if _new_state == null: # if the new state doesn't exist or is the same as the current do nothing
 		return
 	elif _new_state == current_state:
-		print("Already in this state: ", _new_state)
 		return
 	
 	if current_state:

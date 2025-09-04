@@ -1,6 +1,7 @@
 class_name Hurtbox extends Area2D
 
 signal did_damage #signal that calls if damage was dished out
+signal blocked #signal that calls if damage was blocked
 
 @export var damage : int = 1 #variable damage int
 
@@ -12,4 +13,7 @@ func entered_area( area : Area2D ) -> void: #pass in the area connecting
 	if area is Hitbox: #if it was a hitbox we are doing damage so call signal
 		did_damage.emit()
 		area.take_damage( self ) #take damage to attached entity
+	elif area is Shieldbox: #if it was a shieldbox we are shielding so call signal
+		blocked.emit()
+		area.shield_damage( self ) #shield damage
 	pass
