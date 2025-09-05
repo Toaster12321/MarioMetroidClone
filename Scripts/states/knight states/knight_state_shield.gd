@@ -12,10 +12,11 @@ var hurtbox : Hurtbox
 var shielding : bool =  false
 var hitbox_monitor : bool = true
 var shieldbox_monitor : bool = false
+#var deflecting : bool = false
 
 
 func init() -> void:
-	knight.damage_blocked.connect( _damage_blocked ) #connect damage blocked signal from knight class
+	#knight.damage_blocked.connect( _damage_blocked ) #connect damage blocked signal from knight class
 	pass
 
 
@@ -23,6 +24,7 @@ func enter() -> void:
 	shielding = true # we are shielding
 	hitbox_monitor = false #turn off normal hitbox
 	shieldbox_monitor = true #turn on shield hitbox
+	#deflecting = false
 	
 	if direction.x == 0: #if we arent moving play idle shield animation otherwise play walking animation
 		knight.animation_player.play("shield")
@@ -33,18 +35,17 @@ func enter() -> void:
 
 func exit() -> void:
 	shielding = false #we arent shielding
-	hitbox_monitor = true #turn on normal hitbox
-	shieldbox_monitor = false #turn off shield hitbox
+	hitbox.monitorable = true #turn on hitbox, turn off shieldbox
+	shieldbox.monitorable = false
+	#deflecting = false
 	pass 
 
 
 func handle_input( _event : InputEvent ) -> KnightState:
-	if _event.is_action_pressed("shield"): #transition to attack state when button is pressed
-		shielding = true #if we hold shield button keep shielding
-		return self
-	elif _event.is_action_released("shield"):
+	if _event.is_action_released("shield"):
 		shielding = false
-		return idle #when released we are no longer shielding
+		print("not shielding")
+		return idle
 	elif _event.is_action_pressed("jump"): #transition to jump state when button is pressed
 		return jump
 	elif _event.is_action_pressed("attack"): #transition to attack state when button is pressed
@@ -53,6 +54,12 @@ func handle_input( _event : InputEvent ) -> KnightState:
 
 
 func process( _delta : float ) -> KnightState:
+	shielding = Input.is_action_pressed("shield")
+	
+	#if deflecting == true:
+		#knight.velocity = Vector2.ZERO
+		#return null
+	
 	knight.update_velocity( direction.x * shielding_speed, deceleration ) #slow player down to shield walk speed
 	
 	if direction.x == 0: #play shield idle if not moving
@@ -81,5 +88,29 @@ func physics_process( _delta : float ) -> KnightState:
 func _damage_blocked( _hurtbox : Hurtbox ) -> void:
 	hurtbox = _hurtbox #get passed hurtbox
 	print("player blocked")
-	state_machine.change_state( death ) #block damage
+	#deflecting = true
+	#
+	#
+	#knight.animation_player.play("shield_deflect") #block damage
+	#
+	#if knight.animation_player.is_connected("animation_finished", Callable(self, "_on_deflect_finished")):
+		#knight.animation_player.animation_finished.disconnect(Callable(self, "_on_deflect_finished"))
+		#
+	#knight.animation_player.animation_finished.connect(_on_deflect_finished, CONNECT_ONE_SHOT)
 	pass
+#
+#
+#func _on_deflect_finished( _anim : String ) -> void:
+	#if _anim == "shield_deflect":
+		#deflecting = false
+		#
+	#if Input.is_action_pressed("shield"):
+		#if direction.x == 0: #if we arent moving play idle shield animation otherwise play walking animation
+			#knight.animation_player.play("shield")
+		#elif sign(direction.x) == sign(knight.current_direction):
+			#knight.animation_player.play("shield_walk_forward")
+		#else:
+			#knight.animation_player.play("shield_walk_back")
+	#else:
+		#state_machine.change_state( idle )
+	#pass
