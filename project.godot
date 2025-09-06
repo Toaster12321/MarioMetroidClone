@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MarioClone"
-run/main_scene="uid://bj4rkw7gwpm65"
+run/main_scene="uid://bh5be65ovlra8"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

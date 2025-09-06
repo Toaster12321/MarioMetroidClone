@@ -1,5 +1,6 @@
 class_name KnightStateDeath extends KnightState
 
+var deceleration : float = 10.0
 
 func init() -> void:
 	pass
@@ -19,7 +20,7 @@ func handle_input( _event : InputEvent ) -> KnightState:
 
 
 func process( _delta : float ) -> KnightState:
-	knight.velocity = Vector2.ZERO
+	knight.update_velocity(0, deceleration)
 	return null
 
 

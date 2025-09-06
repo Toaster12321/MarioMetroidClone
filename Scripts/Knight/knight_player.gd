@@ -9,6 +9,7 @@ class_name Knight extends CharacterBody2D
 @onready var jump: KnightStateJump = %Jump
 @onready var fall: KnightStateFall = %Fall
 @onready var crouch: KnightStateCrouch = %Crouch
+@onready var deflect: KnightStateDeflect = %Deflect
 @onready var knight_state_machine: KnightStateMachine = $KnightStateMachine
 @onready var shield: KnightStateShield = %Shield
 @onready var attack: KnightStateAttack = %Attack
